@@ -1,0 +1,9 @@
+{
+    "name": "GameplayUIReducer",
+    "description": "Hides UI elements during gameplay",
+    "version_number": "1.0.1",
+    "dependencies": [
+      "BepInEx-BepInExPack_TromboneChamp-5.4.21"
+    ],
+    "website_url": "https://github.com/emmett-shark/GameplayUIReducer"
+}
