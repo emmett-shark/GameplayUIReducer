@@ -6,6 +6,9 @@ https://gist.github.com/TomDotBat/1b9fd3955cee340d858bc0be9afcf5c6
 - Hides UI elements during gameplay
 
 ## Changelog
+v1.0.4
+- Stop logging errors
+
 v1.0.3
 - Fix for Misirlou is rainbow borders turned off
 - Add time elapsed hider and fix song name and score hiding

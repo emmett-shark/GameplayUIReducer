@@ -66,6 +66,7 @@ namespace GameplayUIReducer
 
         private static void HideElement(string name, string objectPath)
         {
+            if (string.IsNullOrWhiteSpace(objectPath)) return;
             GameObject gameObject = GameObject.Find(objectPath);
             if (gameObject == null)
             {
