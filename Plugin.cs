@@ -94,7 +94,7 @@ namespace GameplayUIReducer
             ElementPaths.Add("Breath Meter", "BreathCanvas");
             ElementPaths.Add("Champ Text", "ChampCanvas");
             ElementPaths.Add("Health Meter", "HealthMask");
-            ElementPaths.Add("Rainbow Borders", "RainbowCamera");
+            ElementPaths.Add("Rainbow Borders", null);
             ElementPaths.Add("Longest Combo", "GameplayCanvas/UIHolder/maxcombo");
             ElementPaths.Add("Note Lines", "GameplayCanvas/GameSpace/NoteLinesHolder");
             ElementPaths.Add("Lyrics", "GameplayCanvas/GameSpace/LyricsHolder");
@@ -103,8 +103,9 @@ namespace GameplayUIReducer
             ElementPaths.Add("Accuracy Popup", "GameplayCanvas/Popups/popup_text");
             ElementPaths.Add("No Gap Popup", "GameplayCanvas/Popups/no_gap");
             ElementPaths.Add("Max Popup", "GameplayCanvas/Popups/MAX");
-            ElementPaths.Add("Song Name", "GameplayCanvas/UIHolder/difficulty_and_songname/Song Name Shadow");
-            ElementPaths.Add("Score Counter", "GameplayCanvas/UIHolder/difficulty_and_songname/ScoreShadow");
+            ElementPaths.Add("Song Name", "GameplayCanvas/UIHolder/upper_right/Song Name Shadow");
+            ElementPaths.Add("Score Counter", "GameplayCanvas/UIHolder/upper_right/ScoreShadow");
+            ElementPaths.Add("Time Elapsed", "GameplayCanvas/UIHolder/time_elapsed");
         }
 
         private new static ManualLogSource Logger { get; set; }
@@ -125,13 +126,21 @@ namespace GameplayUIReducer
     [HarmonyPatch(typeof(RainbowEffect), nameof(RainbowEffect.startRainbowLess))]
     internal class RainbowEffectStartPatch
     {
-        static bool Prefix() => Plugin.IsRainbowVisible();
+        static bool Prefix(ref bool ___champmode)
+        {
+            ___champmode = true;
+            return Plugin.IsRainbowVisible();
+        }
     }
 
 
     [HarmonyPatch(typeof(RainbowEffect), nameof(RainbowEffect.stopRainbow))]
     internal class RainbowEffectStopPatch
     {
-        static bool Prefix() => Plugin.IsRainbowVisible();
+        static bool Prefix(ref bool ___champmode)
+        {
+            ___champmode = false;
+            return Plugin.IsRainbowVisible();
+        }
     }
 }
