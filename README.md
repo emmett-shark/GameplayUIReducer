@@ -6,6 +6,9 @@ https://gist.github.com/TomDotBat/1b9fd3955cee340d858bc0be9afcf5c6
 - Hides UI elements during gameplay
 
 ## Changelog
+v1.0.5
+- Hide left bounds, notes, note cursor (courtesy of @DerpyChap)
+
 v1.0.4
 - Stop logging errors
 
