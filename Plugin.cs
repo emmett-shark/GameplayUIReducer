@@ -1,6 +1,6 @@
 /*
     COPYRIGHT NOTICE:
-    © 2022 Thomas O'Sullivan - All rights reserved.
+    ï¿½ 2022 Thomas O'Sullivan - All rights reserved.
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
@@ -97,9 +97,12 @@ namespace GameplayUIReducer
             ElementPaths.Add("Health Meter", "HealthMask");
             ElementPaths.Add("Rainbow Borders", null);
             ElementPaths.Add("Longest Combo", "GameplayCanvas/UIHolder/maxcombo");
+            ElementPaths.Add("Left Bounds", "GameplayCanvas/GameSpace/LeftBounds");
             ElementPaths.Add("Note Lines", "GameplayCanvas/GameSpace/NoteLinesHolder");
+            ElementPaths.Add("Notes", "GameplayCanvas/GameSpace/NotesHolder");
             ElementPaths.Add("Lyrics", "GameplayCanvas/GameSpace/LyricsHolder");
             ElementPaths.Add("Note Explosions", "GameplayCanvas/GameSpace/NoteEndExplosions");
+            ElementPaths.Add("Note Cursor", "GameplayCanvas/GameSpace/TargetNote");
             ElementPaths.Add("Multiplier Popup", "GameplayCanvas/Popups/popup_mult");
             ElementPaths.Add("Accuracy Popup", "GameplayCanvas/Popups/popup_text");
             ElementPaths.Add("No Gap Popup", "GameplayCanvas/Popups/no_gap");
@@ -107,6 +110,7 @@ namespace GameplayUIReducer
             ElementPaths.Add("Song Name", "GameplayCanvas/UIHolder/upper_right/Song Name Shadow");
             ElementPaths.Add("Score Counter", "GameplayCanvas/UIHolder/upper_right/ScoreShadow");
             ElementPaths.Add("Time Elapsed", "GameplayCanvas/UIHolder/time_elapsed");
+            ElementPaths.Add("Tromboner Model", "3dModelCamera");
         }
 
         private new static ManualLogSource Logger { get; set; }
