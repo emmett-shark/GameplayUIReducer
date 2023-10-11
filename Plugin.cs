@@ -110,6 +110,7 @@ namespace GameplayUIReducer
             ElementPaths.Add("Song Name", "GameplayCanvas/UIHolder/upper_right/Song Name Shadow");
             ElementPaths.Add("Score Counter", "GameplayCanvas/UIHolder/upper_right/ScoreShadow");
             ElementPaths.Add("Time Elapsed", "GameplayCanvas/UIHolder/time_elapsed");
+            ElementPaths.Add("Time Elapsed Progress Bar", "GameplayCanvas/UIHolder/time_elapsed_bar");
             ElementPaths.Add("Tromboner Model", "PlayerModelHolder");
         }
 
