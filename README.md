@@ -6,6 +6,9 @@ https://gist.github.com/TomDotBat/1b9fd3955cee340d858bc0be9afcf5c6
 - Hides UI elements during gameplay
 
 ## Changelog
+v1.0.7
+- Hide time elapsed bar (courtesy of @DerpyChap)
+
 v1.0.6
 - Hide tromboner model (courtesy of @DerpyChap)
 
