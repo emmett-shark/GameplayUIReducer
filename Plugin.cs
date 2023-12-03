@@ -100,7 +100,7 @@ namespace GameplayUIReducer
             ElementPaths.Add("Left Bounds", "GameplayCanvas/GameSpace/LeftBounds");
             ElementPaths.Add("Note Lines", "GameplayCanvas/GameSpace/NoteLinesHolder");
             ElementPaths.Add("Notes", "GameplayCanvas/GameSpace/NotesHolder");
-            ElementPaths.Add("Lyrics", "GameplayCanvas/GameSpace/LyricsHolder");
+            ElementPaths.Add("Lyrics", "GameplayCanvas/GameSpace/NotesHolder/AllLyrics");
             ElementPaths.Add("Note Explosions", "GameplayCanvas/GameSpace/NoteEndExplosions");
             ElementPaths.Add("Note Cursor", "GameplayCanvas/GameSpace/TargetNote");
             ElementPaths.Add("Multiplier Popup", "GameplayCanvas/Popups/popup_mult");
