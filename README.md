@@ -6,6 +6,9 @@ https://gist.github.com/TomDotBat/1b9fd3955cee340d858bc0be9afcf5c6
 - Hides UI elements during gameplay
 
 ## Changelog
+v1.0.9
+- Add optional toottally settings
+
 v1.0.8
 - Hide lyrics correctly
 
