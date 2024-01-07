@@ -3,7 +3,7 @@
     <TargetFramework>net472</TargetFramework>
     <AssemblyName>GameplayUIReducer</AssemblyName>
     <Description>Hides UI elements during gameplay</Description>
-    <Version>1.0.9</Version>
+    <Version>1.1.0</Version>
     <LangVersion>latest</LangVersion>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
@@ -11,7 +11,7 @@
   <ItemGroup>
     <PackageReference Include="BepInEx.Core" Version="5.*" />
     <PackageReference Include="BepInEx.PluginInfoProps" Version="1.*" />
-    <PackageReference Include="TromboneChamp.GameLibs" Version="1.11.0-beta" />
+    <PackageReference Include="TromboneChamp.GameLibs" Version="1.19.0-beta" />
     <PackageReference Include="UnityEngine.Modules" Version="2019.3.11" IncludeAssets="compile" />
   </ItemGroup>
 

@@ -63,12 +63,16 @@ public class Plugin : BaseUnityPlugin
         ElementPaths.Add("Time Elapsed", "GameplayCanvas/UIHolder/time_elapsed");
         ElementPaths.Add("Time Elapsed Progress Bar", "GameplayCanvas/UIHolder/time_elapsed_bar");
         ElementPaths.Add("Tromboner Model", "PlayerModelHolder");
+        ElementPaths.Add("Beat Lines", null);
+        ElementPaths.Add("Improv Zones", null);
     }
 
     internal static bool IsRainbowVisible() => !ConfigEntries["Rainbow Borders"]?.Value ?? true;
+    internal static bool AreBeatLinesVisible() => !ConfigEntries["Beat Lines"]?.Value ?? true;
+    internal static bool AreImprovZonesVisible() => !ConfigEntries["Improv Zones"]?.Value ?? true;
 }
 
-[HarmonyPatch(typeof(GameController), "Start")]
+[HarmonyPatch(typeof(GameController), nameof(GameController.Start))]
 internal class GameControllerStartPatch
 {
     static void Postfix()
@@ -91,6 +95,22 @@ internal class GameControllerStartPatch
             }
         }
     }
+}
+
+[HarmonyPatch(typeof(GameController), nameof(GameController.tryToLoadLevel))]
+internal class GameControllerLoadPatch
+{
+    static void Postfix(GameController __instance)
+    {
+        if (!Plugin.AreBeatLinesVisible()) __instance.beatspermeasure = int.MaxValue;
+        if (!Plugin.AreImprovZonesVisible()) __instance.improv_zones = new List<float[]>();
+    }
+}
+
+[HarmonyPatch(typeof(GameController), nameof(GameController.buildImprovZones))]
+internal class GameControllerImprovZonesPatch
+{
+    static bool Prefix() => Plugin.AreImprovZonesVisible();
 }
 
 [HarmonyPatch(typeof(RainbowEffect), nameof(RainbowEffect.startRainbowLess))]
