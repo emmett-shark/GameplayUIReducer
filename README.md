@@ -6,6 +6,9 @@ https://gist.github.com/TomDotBat/1b9fd3955cee340d858bc0be9afcf5c6
 - Hides UI elements during gameplay
 
 ## Changelog
+v1.1.1
+- Fix popups not being hidden
+
 v1.1.0
 - Hide beat lines and improv zones
 

@@ -54,10 +54,7 @@ public class Plugin : BaseUnityPlugin
         ElementPaths.Add("Lyrics", "GameplayCanvas/GameSpace/NotesHolder/AllLyrics");
         ElementPaths.Add("Note Explosions", "GameplayCanvas/GameSpace/NoteEndExplosions");
         ElementPaths.Add("Note Cursor", "GameplayCanvas/GameSpace/TargetNote");
-        ElementPaths.Add("Multiplier Popup", "GameplayCanvas/Popups/popup_mult");
-        ElementPaths.Add("Accuracy Popup", "GameplayCanvas/Popups/popup_text");
-        ElementPaths.Add("No Gap Popup", "GameplayCanvas/Popups/no_gap");
-        ElementPaths.Add("Max Popup", "GameplayCanvas/Popups/MAX");
+        ElementPaths.Add("Score Popups", "GameplayCanvas/Popups");
         ElementPaths.Add("Song Name", "GameplayCanvas/UIHolder/upper_right/Song Name Shadow");
         ElementPaths.Add("Score Counter", "GameplayCanvas/UIHolder/upper_right/ScoreShadow");
         ElementPaths.Add("Time Elapsed", "GameplayCanvas/UIHolder/time_elapsed");
