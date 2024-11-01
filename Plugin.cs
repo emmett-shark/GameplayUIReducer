@@ -53,6 +53,8 @@ public class Plugin : BaseUnityPlugin
         ElementPaths.Add("Notes", "GameplayCanvas/GameSpace/NotesHolder");
         ElementPaths.Add("Lyrics", "GameplayCanvas/GameSpace/NotesHolder/AllLyrics");
         ElementPaths.Add("Note Explosions", "GameplayCanvas/GameSpace/NoteEndExplosions");
+        ElementPaths.Add("Note Explosion Effects", null);
+        ElementPaths.Add("Note Explosion Text", null);
         ElementPaths.Add("Note Cursor", "GameplayCanvas/GameSpace/TargetNote");
         ElementPaths.Add("Score Popups", "GameplayCanvas/Popups");
         ElementPaths.Add("Song Name", "GameplayCanvas/UIHolder/upper_right/Song Name Shadow");
@@ -67,6 +69,8 @@ public class Plugin : BaseUnityPlugin
     internal static bool IsRainbowVisible() => !ConfigEntries["Rainbow Borders"]?.Value ?? true;
     internal static bool AreBeatLinesVisible() => !ConfigEntries["Beat Lines"]?.Value ?? true;
     internal static bool AreImprovZonesVisible() => !ConfigEntries["Improv Zones"]?.Value ?? true;
+    internal static bool AreNoteExplosionEffectsVisible() => !ConfigEntries["Note Explosion Effects"]?.Value ?? true;
+    internal static bool IsNoteExplosionTextVisible() => !ConfigEntries["Note Explosion Text"]?.Value ?? true;
 }
 
 [HarmonyPatch(typeof(GameController), nameof(GameController.Start))]
@@ -91,6 +95,19 @@ internal class GameControllerStartPatch
                 }
             }
         }
+        var noteExplosionPath = Plugin.ElementPaths["Note Explosions"];
+        GameObject noteExplosion = GameObject.Find(noteExplosionPath);
+        if (noteExplosion == null) return;
+        for (int i = 0; i < noteExplosion.gameObject.transform.childCount; i++)
+        {
+            var gameObject = noteExplosion.gameObject.transform.GetChild(i).gameObject;
+            if (gameObject == null) continue;
+            gameObject.transform.GetChild(0).gameObject.SetActive(Plugin.AreNoteExplosionEffectsVisible());
+            gameObject.transform.GetChild(1).gameObject.SetActive(Plugin.AreNoteExplosionEffectsVisible());
+            gameObject.transform.GetChild(2).gameObject.SetActive(Plugin.IsNoteExplosionTextVisible());
+            gameObject.transform.GetChild(3).gameObject.SetActive(Plugin.AreNoteExplosionEffectsVisible());
+        }
+
     }
 }
 
